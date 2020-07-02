@@ -1,11 +1,9 @@
 #map {
   height: 400px;
   width: 400px;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
 }
 
 .container {
- 
+  display: flex;
+  justify-content: flex-end;
 }
