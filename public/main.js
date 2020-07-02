@@ -46,6 +46,24 @@ function getRestaurants() {
 
 getRestaurants()
 
+
+let displayButton = document.getElementById('displayButton')
+console.log(displayButton)
+let display = document.getElementById('display')
+
+fetch('https://json-server.burlingtoncodeacademy.now.sh/restaurants')
+.then((res) => res.json())
+.then((restaurantCollection) => {
+  restaurantCollection.forEach((restaurant) => {
+    let item = document.createElement('li')
+    item.innerHTML = `<a href='/restaurant?q=${restaurant.id}'>${restaurant.name}</a>`
+
+    display.appendChild(item)
+    
+  })
+})
+
+
 // placeMarker('163 Main St. Burlington, VT 05401')
 // placeMarker('115 St Paul St. Burlington, VT 05401')
 // placeMarker('149 S Champlain St. Burlington, VT 05401')
