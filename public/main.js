@@ -1,4 +1,4 @@
-let myMap = L.map('map').setView([44.4798, -73.2143], 12)
+let myMap = L.map("map").setView([44.4798, -73.2143], 12)
 
 L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
   maxZoom: 17,
@@ -33,6 +33,14 @@ function placeMarker(address) {
   })
   
 }
+
+fetch("https://json-server.burlingtoncodeacademy.now.sh/restaurants")
+.then((res) => res.json())
+.then((restaurantCollection) => {
+  restaurantCollection.forEach((restaurant) => {
+    placeMarker(restaurant.address)
+  })
+})
 
 let display = document.getElementById("display")
 
