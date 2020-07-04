@@ -34,34 +34,18 @@ function placeMarker(address) {
   
 }
 
-function getRestaurants() {
-  fetch('https://json-server.burlingtoncodeacademy.now.sh/restaurants')
-  .then((res) => res.json())
-  .then(restaurants => {
-    restaurants.forEach(restaurant => {
-      placeMarker(restaurant.address)
-    })
-  })
-}
-
-getRestaurants()
-
-
-let displayButton = document.getElementById('displayButton')
-console.log(displayButton)
-let display = document.getElementById('display')
+let display = document.getElementById("display")
 
 fetch('https://json-server.burlingtoncodeacademy.now.sh/restaurants')
 .then((res) => res.json())
 .then((restaurantCollection) => {
   restaurantCollection.forEach((restaurant) => {
-    let item = document.createElement('li')
+    let item = document.createElement("li")
     item.innerHTML = `<a href='/restaurant?q=${restaurant.id}'>${restaurant.name}</a>`
-
     display.appendChild(item)
-    
   })
 })
+
 
 
 // placeMarker('163 Main St. Burlington, VT 05401')

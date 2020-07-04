@@ -17,6 +17,4 @@ app.get('/restaurant', (req, res) => {
   res.sendFile(public + '/restaurant.html')
 })
 
-// http://localhost:8080/restaurant.html#joes-diner
-
 app.listen(port, () => console.log(`Listening on port ${port}`))
