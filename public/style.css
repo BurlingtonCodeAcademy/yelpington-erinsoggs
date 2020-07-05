@@ -27,6 +27,7 @@ body {
 .container {
   display: flex;
   justify-content: space-around;
+  padding-bottom: 25vh;
 }
 
 .card {
@@ -88,4 +89,22 @@ body {
   justify-content: center;
   color: #070777;
   margin-bottom: 2vh;
+}
+
+#header2 {
+  display: flex;
+  justify-content: flex-start;
+  font-size: 20px;
+  color: #070777;
+}
+
+#restButton {
+  color: white;
+  margin-left: 24vw;
+  background-color: #070777;
+  border-radius: 20px;
+  border: 1px solid #070777;
+  margin-bottom: 2vh;
+  width: 130px;
+
 }

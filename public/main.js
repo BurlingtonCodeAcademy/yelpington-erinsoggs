@@ -30,21 +30,18 @@ function placeMarker(address) {
   .then (json => {
     let latLongArr = [json[0].lat, json[0].lon]
     let marker = L.marker([json[0].lat, json[0].lon])
-    console.log(marker)
-    marker.bindPopup('hi').openPopup()
-    marker.addTo(myMap)
-    L.marker(latLongArr).addTo(myMap)
+    L.marker(latLongArr).addTo(myMap).bindPopup(restaurant.name).openPopup()
   })
-  
 }
 
-// fetch("https://json-server.burlingtoncodeacademy.now.sh/restaurants")
-// .then((res) => res.json())
-// .then((restaurantCollection) => {
-//   restaurantCollection.forEach((restaurant) => {
-//     placeMarker(restaurant.address)
-//   })
-// })
+fetch("https://json-server.burlingtoncodeacademy.now.sh/restaurants")
+.then((res) => res.json())
+.then((restaurantCollection) => {
+  restaurantCollection.forEach((restaurant) => {
+    placeMarker(restaurant.address)
+  })
+})
+
 
 let display = document.getElementById("display")
 
