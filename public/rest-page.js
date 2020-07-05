@@ -23,18 +23,18 @@ let name = restaurant.name
     restName.innerHTML = `<a href=${website}>${name}</a>`
     
     let address = restaurant.address
-    restAddress.textContent = address
+    restAddress.textContent = "Address: " + address
 
     let phone = restaurant.phone
-    restPhone.textContent = phone
+    restPhone.textContent = "Phone: " + phone
 
     let hours = restaurant.hours
-    restHours.textContent = hours
+    restHours.textContent = "Hours: " + hours
   })
 
-  // MAP
-
-  let myMap = L.map("restMap").setView([44.4798, -73.2143], 12)
+// map
+// setting map view to be on Burlington
+let myMap = L.map("restMap").setView([44.4798, -73.2143], 12)
 
 L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
   maxZoom: 17,
@@ -42,35 +42,18 @@ L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
 }).addTo(myMap)
 
 
-// L.circle([44.4798, -73.2143], {
-//   color: 'red',
-//   fillColor: '#f03',
-//   fillOpacity: 0.5,
-//   radius: 500
-// }).addTo(myMap);
-
-// function to place a marker of the restaurant on the map
+// function to place a marker where the restaurant is 
 function placeMarker(address) {
   let urlAddress = encodeURI(address)
   fetch(`https://nominatim.openstreetmap.org/search?q=${urlAddress}&format=json`)
   .then((res) => res.json())
   .then (json => {
     let latLongArr = [json[0].lat, json[0].lon]
-    L.marker(latLongArr).addTo(myMap).bindPopup(`${name}`).openPopup()
-    // L.marker.bindPopup('hi').openPopup()
-    // L.marker.addTo(myMap)
+    L.marker(latLongArr).addTo(myMap).bindPopup("Restaurant Location").openPopup()
   })
 }
 
 placeMarker(`${restaurantId}`)
-
-// L.marker(`${restaurantId}`).bindPopup('hi')
-// console.log(L.marker)
-// L.marker.addTo(myMap)
-
-// L.marker.addEventListener("mouseover", () => {
-//  L.marker.openPopup()
-// })
 
 
 
