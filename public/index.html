@@ -12,21 +12,36 @@
     crossorigin=""></script>
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <title>Document</title>
 </head>
 
 <body>
-  <div class="card"
-    style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-    Yelpington!
-  </div>
+  <div class="wrapper">
+    <div class="card navbar"
+      style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+      YELP! ...ington!
+    </div>
 
-  <div class="container">
-    <ul id="display"></ul>
-    <div id="map"></div>
-  </div>
-  </div>
+    <div id="border-bottom"></div>
 
+    <div>
+      <h3>Check out finest restaurants Burlington, VT has to offer!</h3>
+    </div>
+
+    <div class="container">
+      <ul id="display"></ul>
+      <div id="map"></div>
+    </div>
+
+    <div class="footer navbar fixed-bottom">
+      <div class="footer-copyright">
+        Made with <i class="fas fa-heart"></i> at Burlington Code Academy
+      </div>
+    </div>
+  </div>
   <script src="./main.js"></script>
 </body>
 

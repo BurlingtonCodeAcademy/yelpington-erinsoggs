@@ -14,13 +14,13 @@ L.marker([44.4798, -73.2143]).addTo(myMap);
 //   radius: 500
 // }).addTo(myMap);
 
-let marker = L.marker([44.4798, -73.2143])
-marker.bindPopup('<h4>Downtown Burlington</h4>')
-marker.addTo(myMap)
+// let marker = L.marker([44.4798, -73.2143])
+// marker.bindPopup('<h4>Downtown Burlington</h4>')
+// marker.addTo(myMap)
 
-marker.addEventListener('mouseover', () => {
-  marker.openPopup()
-})
+// marker.addEventListener('mouseover', () => {
+//   marker.openPopup()
+// })
 
 
 function placeMarker(address) {
@@ -29,6 +29,10 @@ function placeMarker(address) {
   .then((res) => res.json())
   .then (json => {
     let latLongArr = [json[0].lat, json[0].lon]
+    let marker = L.marker([json[0].lat, json[0].lon])
+    console.log(marker)
+    marker.bindPopup('hi').openPopup()
+    marker.addTo(myMap)
     L.marker(latLongArr).addTo(myMap)
   })
   

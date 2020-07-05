@@ -68,15 +68,15 @@ function placeMarker(address) {
   })
 }
 
-fetch("https://json-server.burlingtoncodeacademy.now.sh/restaurants")
-.then((res) => res.json())
-.then((restaurantCollection) => {
-  for(let restaurant in restaurantCollection) {
-    placeMarker(restaurant.address)
+// fetch("https://json-server.burlingtoncodeacademy.now.sh/restaurants")
+// .then((res) => res.json())
+// .then((restaurantCollection) => {
+//   for(let restaurant in restaurantCollection) {
+//     placeMarker(restaurant.address)
 
-  }
+//   }
   
-  })
+//   })
 
 
 

@@ -1,6 +1,8 @@
 #map {
   height: 400px;
   width: 400px;
+  border-radius: 10px;
+  border: 2px solid #070777;
 }
  #restMap {
   height: 400px;
@@ -8,16 +10,21 @@
  }
 
 a {
-  text-decoration: none;
+  text-decoration: none!important;
+  color: #070777;
+}
+
+a:hover {
+  color: #c9407b!important;
 }
 
 body {
-  font-family: Acme;
+  font-family: Acme!important;
 }
 
 .container {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
 }
 
 .card {
@@ -26,16 +33,44 @@ body {
   background-position: center;
   height: 180px;
   display: flex;
-  justify-content: center;
+  justify-content: center!important;
   align-items: center;
   color: white;
-  font-size: 24px;
+  font-size: 60px;
   font-weight: bold;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  border-radius: 5px;
+  border-radius: 0px!important;
+  margin-bottom: 2vh;
+  margin-top: 0vh;
 }
 
 #restaurant {
   display: flex;
   justify-content: space-evenly
+}
+
+#display {
+  list-style-type: none;
+}
+
+.footer {
+  background: #042377;
+  display: flex;
+  align-items: center;
+  justify-content: center!important;
+  height: 100px;
+  margin-bottom: 0px;
+  color: white;
+  
+}
+
+.footer .fa-heart {
+  color: #D23333;
+}
+
+#border-bottom {
+  border-bottom: 1px solid #070777;
+  margin-left: 5vw;
+  margin-right: 5vw;
+  margin-bottom: 2vw;
 }
