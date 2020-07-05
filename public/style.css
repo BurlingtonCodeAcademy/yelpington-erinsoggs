@@ -7,6 +7,8 @@
  #restMap {
   height: 400px;
   width: 400px;
+  border-radius: 10px;
+  border: 2px solid #070777;
  }
 
 a {
@@ -61,6 +63,8 @@ body {
   height: 100px;
   margin-bottom: 0px;
   color: white;
+  font-family: Acme!important;
+  font-size: 16px!important;
   
 }
 
@@ -73,4 +77,15 @@ body {
   margin-left: 5vw;
   margin-right: 5vw;
   margin-bottom: 2vw;
+}
+
+#restName {
+  font-size: 20px;
+}
+
+#header {
+  display: flex;
+  justify-content: center;
+  color: #070777;
+  margin-bottom: 2vh;
 }
