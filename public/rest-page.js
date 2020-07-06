@@ -13,7 +13,7 @@ let restMap = document.getElementById("restMap")
 let notes = restaurant.notes
 let name = restaurant.name
 
-// doesn't work
+// doesn't work, need to fix
 function custComments(comments) {
   comments.forEach((comment) => {
     let custComment = document.createElement("li")
@@ -47,7 +47,7 @@ fetch(`https://yelpingtonapi.herokuapp.com/api/restaurants/${restaurantId}`)
     
     placeMarker(restaurant.coords, name)
     
-    // you guessed it... doesn't work
+    // doesn't work, need to fix
     custComments(notes)
   })
 
