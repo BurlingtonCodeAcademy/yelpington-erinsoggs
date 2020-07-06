@@ -13,7 +13,7 @@ let restMap = document.getElementById("restMap")
 let notes = restaurant.notes
 let name = restaurant.name
 
-// doesn't work, need to fix
+// doesn't work, need to fix. it's supposed to iterate over each comment and put them into a list
 function custComments(comments) {
   comments.forEach((comment) => {
     let custComment = document.createElement("li")
