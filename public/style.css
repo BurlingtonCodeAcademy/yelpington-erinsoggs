@@ -113,3 +113,15 @@ body {
   width: 130px;
   pointer-events: none;
 }
+
+#restComments {
+  border: 1px solid #070777;
+  border-radius: 10px;
+  height: 22vh;
+  width: 40vw;
+  margin-top: 2vh;
+}
+
+#customer-comments {
+  margin: 10px 0px 0px 10px;
+}

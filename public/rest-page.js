@@ -13,15 +13,24 @@ let restMap = document.getElementById("restMap")
 let notes = restaurant.notes
 let name = restaurant.name
 
-  // fetching data for for each individual restaurant by the restaurant's id
-  fetch(`https://json-server.burlingtoncodeacademy.now.sh/restaurants/${restaurantId}`)
+// doesn't work
+function custComments(comments) {
+  comments.forEach((comment) => {
+    let custComment = document.createElement("li")
+    custComment.textContent = comment
+    commentsList.appendChild(custComment)
+  })
+}
+
+// fetching data for for each individual restaurant by the restaurant's id
+fetch(`https://yelpingtonapi.herokuapp.com/api/restaurants/${restaurantId}`)
   .then((res) => res.json())
   .then((restaurant) => {
     let name = restaurant.name
     // turning every restaurant name into a link to their website
     let website = restaurant.website
     restName.innerHTML = `<a href=${website}>${name}</a>`
-    
+
     let address = restaurant.address
     restAddress.textContent = "Address: " + address
 
@@ -30,6 +39,16 @@ let name = restaurant.name
 
     let hours = restaurant.hours
     restHours.textContent = "Hours: " + hours
+
+    let notes = restaurant.notes
+    console.log(notes)
+    
+    restComments.innerHTML = "<p id='customer-comments'>Customer comments: </p>" + notes // not sure why this works
+    
+    placeMarker(restaurant.coords, name)
+    
+    // you guessed it... doesn't work
+    custComments(notes)
   })
 
 // map
@@ -43,18 +62,6 @@ L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
 
 
 // function to place a marker where the restaurant is 
-function placeMarker(address) {
-  let urlAddress = encodeURI(address)
-  fetch(`https://nominatim.openstreetmap.org/search?q=${urlAddress}&format=json`)
-  .then((res) => res.json())
-  .then (json => {
-    let latLongArr = [json[0].lat, json[0].lon]
-    L.marker(latLongArr).addTo(myMap).bindPopup("Restaurant Location").openPopup()
-  })
+function placeMarker(coords, name) {
+  L.marker(coords).addTo(myMap).bindPopup(`${name}`).openPopup()
 }
-
-placeMarker(`${restaurantId}`)
-
-
-
-
