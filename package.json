@@ -19,7 +19,7 @@
   "homepage": "https://github.com/BurlingtonCodeAcademy/yelpington#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "got": "^11.3.0",
+    "got": "^11.8.5",
     "nominatim": "^0.1.0",
     "path": "^0.12.7"
   },
